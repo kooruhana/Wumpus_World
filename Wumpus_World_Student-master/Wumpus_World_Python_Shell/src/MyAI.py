@@ -17,7 +17,6 @@
 #                be lost when the tournament runs your code.
 # ======================================================================
 
-print("hello world")
 from Agent import Agent
 
 class MyAI ( Agent ):
