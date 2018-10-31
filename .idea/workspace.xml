@@ -6,13 +6,7 @@
     <list default="true" id="662ab56a-3d95-4b20-8c10-0dc196f08cd5" name="Default" comment="" />
 =======
     <list default="true" id="662ab56a-3d95-4b20-8c10-0dc196f08cd5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/world1.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Wumpus_World_Student-master.iml" afterPath="$PROJECT_DIR$/.idea/Wumpus_World_Student-master.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/MyAI.py" afterPath="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/MyAI.py" />
     </list>
     <ignored path=".idea/dataSources.local.xml" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
@@ -31,6 +25,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Wumpus_World_Student-master$Main.coverage" NAME="Main Coverage Results" MODIFIED="1540786709904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src" />
+    <SUITE FILE_PATH="coverage/Wumpus_World$World.coverage" NAME="World Coverage Results" MODIFIED="1540956728377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src" />
     <SUITE FILE_PATH="coverage/Wumpus_World_Student-master$ManualAI.coverage" NAME="ManualAI Coverage Results" MODIFIED="1540786702816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src" />
     <SUITE FILE_PATH="coverage/Wumpus_World_Student-master$World.coverage" NAME="World Coverage Results" MODIFIED="1540786696807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src" />
     <SUITE FILE_PATH="coverage/Wumpus_World$Main.coverage" NAME="Main Coverage Results" MODIFIED="1540940006017" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src" />
@@ -45,10 +40,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MyAI.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyAI.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/MyAI.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+            <state vertical-scroll-proportion="-4.0">
+=======
+>>>>>>> 6ff0ff1cf08d0a21d11a858127381208a8d8076e
 <<<<<<< HEAD
             <state relative-caret-position="621">
               <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
@@ -68,6 +68,7 @@
               <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
 =======
             <state vertical-scroll-proportion="0.2967033">
+>>>>>>> 1cd030a00aeb197723c69343c76ec74f5d536231
               <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
               <folding />
@@ -130,9 +131,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="World.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="World.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/World.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state vertical-scroll-proportion="0.3836317">
+              <caret line="279" column="42" selection-start-line="279" selection-start-column="42" selection-end-line="279" selection-end-column="42" />
+=======
 <<<<<<< HEAD
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -140,6 +145,7 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
+>>>>>>> 1cd030a00aeb197723c69343c76ec74f5d536231
               <folding />
             </state>
           </provider>
@@ -221,7 +227,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.World">
     <configuration default="false" name="MyAI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -499,10 +505,10 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Python.MyAI" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ManualAI" />
-        <item index="3" class="java.lang.String" itemvalue="Python.World" />
+        <item index="0" class="java.lang.String" itemvalue="Python.World" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Main" />
+        <item index="2" class="java.lang.String" itemvalue="Python.MyAI" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ManualAI" />
       </list>
     </recent_temporary>
   </component>
@@ -754,14 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/World.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/RandomAI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -804,16 +802,30 @@
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+        <state vertical-scroll-proportion="-4.0">
+=======
+>>>>>>> 6ff0ff1cf08d0a21d11a858127381208a8d8076e
+<<<<<<< HEAD
         <state relative-caret-position="621">
           <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
 =======
         <state vertical-scroll-proportion="0.2967033">
+>>>>>>> 1cd030a00aeb197723c69343c76ec74f5d536231
           <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
 =======
         <state relative-caret-position="276">
           <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
 >>>>>>> parent of 30f5c6e... Update .idea/workspace.xml
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/World.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3836317">
+          <caret line="279" column="42" selection-start-line="279" selection-start-column="42" selection-end-line="279" selection-end-column="42" />
           <folding />
         </state>
       </provider>
