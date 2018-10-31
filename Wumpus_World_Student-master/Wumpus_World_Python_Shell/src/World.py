@@ -278,7 +278,7 @@ class World():
         tileString += "."
         
         print(tileString.rjust(8), end="")
-    
+
     def __printAgentInfo ( self ):
         print ( "Score: "   + str(self.__score) )
         print ( "AgentX: "  + str(self.__agentX) )

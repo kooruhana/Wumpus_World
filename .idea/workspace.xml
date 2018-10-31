@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <list default="true" id="662ab56a-3d95-4b20-8c10-0dc196f08cd5" name="Default" comment="" />
 =======
     <list default="true" id="662ab56a-3d95-4b20-8c10-0dc196f08cd5" name="Default" comment="">
@@ -15,6 +16,11 @@
     </list>
     <ignored path=".idea/dataSources.local.xml" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
+=======
+    <list default="true" id="662ab56a-3d95-4b20-8c10-0dc196f08cd5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+>>>>>>> parent of 30f5c6e... Update .idea/workspace.xml
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +49,13 @@
         <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/MyAI.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="621">
               <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+=======
+            <state relative-caret-position="276">
+              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+>>>>>>> parent of 30f5c6e... Update .idea/workspace.xml
               <folding />
             </state>
           </provider>
@@ -508,11 +519,15 @@
   <component name="ToolWindowManager">
 <<<<<<< HEAD
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+<<<<<<< HEAD
     <editor active="false" />
 =======
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
+=======
+    <editor active="true" />
+>>>>>>> parent of 30f5c6e... Update .idea/workspace.xml
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13327949" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -788,12 +803,17 @@
     <entry file="file://$PROJECT_DIR$/Wumpus_World_Student-master/Wumpus_World_Python_Shell/src/MyAI.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="621">
           <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
 =======
         <state vertical-scroll-proportion="0.2967033">
           <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
 >>>>>>> e67089c8c4e9f62e7677133b295d9cc77a240c4d
+=======
+        <state relative-caret-position="276">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+>>>>>>> parent of 30f5c6e... Update .idea/workspace.xml
           <folding />
         </state>
       </provider>
