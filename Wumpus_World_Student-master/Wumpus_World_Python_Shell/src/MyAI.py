@@ -27,6 +27,7 @@ class MyAI ( Agent ):
         self.currentPos = (1,1)
         self.hasArrow = True
         self.grabbed = False
+        self.
         self.explored = [(1,1)]
 
 
@@ -44,32 +45,7 @@ class MyAI ( Agent ):
         self.hasArrow = False
         return Agent.Action.SHOOT
 
-    def turnLeft(self):
-        if self.direction == "right":
-            self.direction = "up"
-        elif self.direction == "up":
-            self.direction = "left"
-        elif self.direction == "left":
-            self.direction = "down"
-        elif self.direction == "down":
-            self.direction = "right"
+    def foundGold(self):
+        self.grabbed = True
+        return Agent.Action.GRAB
 
-    def turnRight(self):
-        if self.direction == "right":
-            self.direction = "down"
-        elif self.direction == "up":
-            self.direction = "right"
-        elif self.direction == "left":
-            self.direction = "up"
-        elif self.direction == "down":
-            self.direction = "left"
-
-    def uTurn(self):
-        if self.direction == "right":
-            self.direction = "left"
-        elif self.direction == "up":
-            self.direction = "down"
-        elif self.direction == "left":
-            self.direction = "right"
-        elif self.direction == "down":
-            self.direction = "up"
