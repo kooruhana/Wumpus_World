@@ -59,4 +59,5 @@ class MyAI ( Agent ):
     def foundGold(self):
         self.grabbed = True
         return Agent.Action.GRAB
+    def 
 
