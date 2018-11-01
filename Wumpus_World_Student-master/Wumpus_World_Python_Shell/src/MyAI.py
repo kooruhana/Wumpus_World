@@ -1,4 +1,4 @@
-# ======================================================================
+ # ======================================================================
 # FILE:        MyAI.py
 #
 # AUTHOR:      Abdullah Younis
@@ -27,19 +27,30 @@ class MyAI ( Agent ):
         self.currentPos = (1,1)
         self.hasArrow = True
         self.grabbed = False
-        self.
+        self.percepts = []
         self.explored = [(1,1)]
 
 
     def getAction( self, stench, breeze, glitter, bump, scream ):
 
-        # --- STENCH NEAR WUMPUS --- #
-        if stench and self.hasArrow == False:
+        if (breeze or stench) and self.currentPos == (1,1):
+            """
+            if breeze:
+                print("breeze")
+            elif stench:
+                print("stench")
+            """
+            return Agent.Action.CLIMB
+        elif stench and self.hasArrow == False:
+            "go back"
             return
-        if glitter:
+        elif glitter:
             self.grabbed = True
-
-        return Agent.Action.CLIMB
+            return self.foundGold()
+        elif self.grabbed == True and self.currentPos == (0,0):
+            return Agent.Action.CLIMB
+        else:
+            return Agent.Action.FORWARD
 
     def shotArrow(self):
         self.hasArrow = False
