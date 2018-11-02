@@ -49,8 +49,22 @@ class MyAI ( Agent ):
             return self.foundGold()
         elif self.grabbed == True and self.currentPos == (0,0):
             return Agent.Action.CLIMB
+        elif bump:
+            
         else:
-            return Agent.Action.FORWARD
+            return self.takeMove()
+
+    def takeMove(self):
+        if self.direction == 'right':
+            self.currentPos = (self.currentPos[0]+1,self.currentPos[1])
+        elif self.direction == 'left':
+            self.currentPos = (self.currentPos[0]-1,self.currentPos[1])
+        elif self.direction == 'up':
+            self.currentPos = (self.currentPos[0],self.currentPos[1]+1)
+        elif self.direction == 'down':
+            self.currentPos = (self.currentPos[0],self.currentPos[1]-1)
+        return Agent.Action.FORWARD
+
 
     def shotArrow(self):
         self.hasArrow = False
@@ -59,5 +73,8 @@ class MyAI ( Agent ):
     def foundGold(self):
         self.grabbed = True
         return Agent.Action.GRAB
+<<<<<<< HEAD
     def
+=======
+>>>>>>> 4e1ca4d1a452c65e855f471b75b6be8464dcf392
 
