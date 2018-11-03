@@ -41,7 +41,7 @@ class MyAI ( Agent ):
             elif stench:
                 print("stench")
             """
-            print("Run away")
+            #print("Run away")
             return Agent.Action.CLIMB
         else:
             if stench and self.hasArrow == False:
@@ -50,23 +50,22 @@ class MyAI ( Agent ):
             elif glitter:
                 self.grabbed = True
                 return self.foundGold()
-            if self.minimalCounter == 1:
+            if 0 < self.minimalCounter < 3:
                 """
                 Minimal AI
                 When it moves one step ahead, turn around immediately 
                 """
                 self.grabbed = True # Start going back
-                self.leftTurn()
-                self.leftTurn()
-                print("going back")
-            if self.grabbed == True and self.currentPos == (0,0):
+                #print("going back")
+                self.minimalCounter = self.minimalCounter+1
+                return self.uTurn()
+            if self.grabbed == True and self.currentPos == (1,1):
                 return Agent.Action.CLIMB
             else:
                 self.minimalCounter = self.minimalCounter + 1
                 return self.takeMove()
 
     def takeMove(self):
-        print("taking move")
         if self.direction == 'right':
             self.currentPos = (self.currentPos[0]+1,self.currentPos[1])
         elif self.direction == 'left':
@@ -75,11 +74,12 @@ class MyAI ( Agent ):
             self.currentPos = (self.currentPos[0],self.currentPos[1]+1)
         elif self.direction == 'down':
             self.currentPos = (self.currentPos[0],self.currentPos[1]-1)
-        print(self.currentPos)
+        #print(self.currentPos)
         return Agent.Action.FORWARD
 
 
-    def leftTurn(self):
+    def uTurn(self):
+        actionL = [Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT]
         if self.direction == 'right':
             self.direction = 'up'
         elif self.direction == 'left':
@@ -88,8 +88,8 @@ class MyAI ( Agent ):
             self.direction = 'left'
         elif self.direction == 'down':
             self.direction = 'right'
-        print("leftturn")
-        return Agent.Action.TURN_LEFT
+        for a in actionL:
+            return a
 
     def shotArrow(self):
         self.hasArrow = False
