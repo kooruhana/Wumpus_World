@@ -45,13 +45,20 @@ class MyAI ( Agent ):
             return Agent.Action.CLIMB
         else:
             if stench and self.hasArrow == False:
-                "go back"
+                "When percepts stench and you have no arrow. Escape"
                 return
             elif glitter:
                 self.grabbed = True
                 return self.foundGold()
             if self.minimalCounter == 1:
-                return self.Uturn()
+                """
+                Minimal AI
+                When it moves one step ahead, turn around immediately 
+                """
+                self.grabbed = True # Start going back
+                self.leftTurn()
+                self.leftTurn()
+                print("going back")
             if self.grabbed == True and self.currentPos == (0,0):
                 return Agent.Action.CLIMB
             else:
@@ -72,16 +79,16 @@ class MyAI ( Agent ):
         return Agent.Action.FORWARD
 
 
-    def Uturn(self):
-        move = Agent.Action.TURN_LEFT
+    def leftTurn(self):
         if self.direction == 'right':
-            self.direction = 'left'
-        elif self.direction == 'left':
-            self.direction = 'right'
-        elif self.direction == 'up':
-            self.direction = 'down'
-        elif self.direction == 'down':
             self.direction = 'up'
+        elif self.direction == 'left':
+            self.direction = 'down'
+        elif self.direction == 'up':
+            self.direction = 'left'
+        elif self.direction == 'down':
+            self.direction = 'right'
+        print("leftturn")
         return Agent.Action.TURN_LEFT
 
     def shotArrow(self):
