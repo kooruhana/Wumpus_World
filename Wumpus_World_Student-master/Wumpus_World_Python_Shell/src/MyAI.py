@@ -60,10 +60,10 @@ class MyAI ( Agent ):
             if self.back and self.currentPos == (1,1):
                 return Agent.Action.CLIMB
 
-            if self.oneMore == True:
-                self.oneMore = False
-                self.nextMove.append(Agent.Action.TURN_LEFT)
-                return self.takeMove(self.nextMove.pop())
+            # if self.oneMore == True:
+            #     self.oneMore = False
+            #     self.nextMove.append(Agent.Action.TURN_LEFT)
+            #     return self.takeMove(self.nextMove.pop())
 
             if self.grabbed == True and self.makeUturn == True:
                 self.uTurnCount+=1
@@ -72,18 +72,20 @@ class MyAI ( Agent ):
                     self.explored.append(Agent.Action.TURN_LEFT)
                 return self.takeMove(self.explored.pop())
 
-            if bump and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
+            if bump and self.grabbed == False and self.makeUturn == False:
                 # if bump, turn until no bump
                 #self.explored.append(Agent.Action.TURN_LEFT)
                 if self.ForceuTurnCount == 0:
-                    self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                self.ForceuTurnCount += 1
-                self.back = True
-                self.oneMore = True
+                    self.explored.append([Agent.Action.TURN_LEFT])
+                    self.nextMove.extend([Agent.Action.TURN_LEFT])
+
+                print(self.explored)
+                # self.oneMore = True
                 return self.takeMove(self.nextMove.pop())
 
             if stench and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
                 if self.ForceuTurnCount == 0:
+                    self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                 self.ForceuTurnCount += 1
                 self.back = True
@@ -91,6 +93,7 @@ class MyAI ( Agent ):
 
             if breeze and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
                 if self.ForceuTurnCount == 0:
+                    self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                 self.ForceuTurnCount += 1
                 self.back = True
@@ -102,6 +105,14 @@ class MyAI ( Agent ):
 
     def takeMove(self,move):
         # qprint("direction: "+self.direction)
+        if self.back == True:
+            for move in range(len(self.explored)):
+                next_move = self.explored.pop()
+                if next_move == Agent.Action.TURN_LEFT:
+                    next_move = Agent.Action.TURN_RIGHT
+                elif next_move == Agent.Action.TURN_RIGHT:
+                    next_move = Agent.Action.TURN_LEFT
+                return next_move
         if move == Agent.Action.FORWARD:
             if self.direction == 'right':
                 self.currentPos = (self.currentPos[0]+1,self.currentPos[1])
@@ -149,15 +160,6 @@ class MyAI ( Agent ):
         self.makeUturn = True
         return Agent.Action.GRAB
 
-    def goHome(self):
-        # print("going home")
-        for move in range(len(self.explored)):
-            nextMove = self.explored.pop()
-            if nextMove == Agent.Action.TURN_LEFT:
-                nextMove = Agent.Action.TURN_RIGHT
-            elif nextMove == Agent.Action.TURN_RIGHT:
-                nextMove = Agent.Action.TURN_LEFT
-            return nextMove
 
 
             # if 0 < self.minimalCounter < 3:
