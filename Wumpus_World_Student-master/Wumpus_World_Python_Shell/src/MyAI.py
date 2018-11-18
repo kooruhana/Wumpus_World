@@ -17,9 +17,6 @@
 #                be lost when the tournament runs your code.
 # ======================================================================
 
-"""
-    一直forward 碰见gold就捡，碰见任何breeze或者stench都直接掉头
-"""
 
 from Agent import Agent
 from collections import deque
@@ -81,19 +78,17 @@ class MyAI ( Agent ):
                     # self.oneMore = True
                     return self.takeMove(self.nextMove.pop())
 
-                if stench and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
+                if stench and self.grabbed == False and self.makeUturn == False:
                     # if self.ForceuTurnCount == 0:
                     #     self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                     #     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                    self.ForceuTurnCount += 1
                     self.back = True
                     return
 
-                if breeze and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
+                if breeze and self.grabbed == False and self.makeUturn == False:
                     # if self.ForceuTurnCount == 0:
                     #     self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
                     #     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                    self.ForceuTurnCount += 1
                     self.back = True
                     return
 
@@ -103,6 +98,7 @@ class MyAI ( Agent ):
                 return self.takeMove(self.nextMove.pop())
 
         elif self.back == True:
+
             if self.currentPos == (0,0):
                 return Agent.Action.CLIMB
             if self.makeUturn == False:
