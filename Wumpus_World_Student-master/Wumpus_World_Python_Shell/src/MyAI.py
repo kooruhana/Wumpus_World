@@ -29,7 +29,7 @@ class MyAI ( Agent ):
     def __init__ ( self ):
 
         self.direction = 'right'
-        self.currentPos = (1,1)
+        self.currentPos = (0,0)
         self.hasArrow = True
         self.grabbed = False
         self.nextMove = deque()
@@ -43,76 +43,85 @@ class MyAI ( Agent ):
 
     def getAction( self, stench, breeze, glitter, bump, scream ):
 
-        if (breeze or stench) and self.currentPos == (1,1):
-            """
-            if breeze:
-                print("breeze")
-            elif stench:
-                print("stench")
-            """
-            #print("Run away")
-            return Agent.Action.CLIMB
-        else:
-            # print(self.currentPos)
-            if glitter:
-                self.grabbed = True
-                return self.foundGold()
-            if self.back and self.currentPos == (1,1):
+        if self.back == False:
+            if (breeze or stench) and self.currentPos == (1,1):
+                """
+                if breeze:
+                    print("breeze")
+                elif stench:
+                    print("stench")
+                """
+                #print("Run away")
                 return Agent.Action.CLIMB
+            else:
+                # print(self.currentPos)
+                if glitter:
+                    self.grabbed = True
+                    self.back = True
+                    return self.foundGold()
 
-            # if self.oneMore == True:
-            #     self.oneMore = False
-            #     self.nextMove.append(Agent.Action.TURN_LEFT)
-            #     return self.takeMove(self.nextMove.pop())
+                # if self.oneMore == True:
+                #     self.oneMore = False
+                #     self.nextMove.append(Agent.Action.TURN_LEFT)
+                #     return self.takeMove(self.nextMove.pop())
 
-            if self.grabbed == True and self.makeUturn == True:
-                self.uTurnCount+=1
-                self.back = True
-                if self.uTurnCount <= 2:
+                if self.grabbed == True and self.makeUturn == True:
+                    self.uTurnCount+=1
+                    self.back = True
+                    if self.uTurnCount <= 2:
+                        self.explored.append(Agent.Action.TURN_LEFT)
+                    return self.takeMove(self.explored.pop())
+
+                if bump and self.grabbed == False and self.makeUturn == False and self.back==False:
+                    # if bump, turn until no bump
+                    #self.explored.append(Agent.Action.TURN_LEFT)
                     self.explored.append(Agent.Action.TURN_LEFT)
-                return self.takeMove(self.explored.pop())
+                    self.nextMove.append(Agent.Action.TURN_LEFT)
+                    # print(self.explored)
+                    # self.oneMore = True
+                    return self.takeMove(self.nextMove.pop())
 
-            if bump and self.grabbed == False and self.makeUturn == False:
-                # if bump, turn until no bump
-                #self.explored.append(Agent.Action.TURN_LEFT)
-                if self.ForceuTurnCount == 0:
-                    self.explored.append([Agent.Action.TURN_LEFT])
-                    self.nextMove.extend([Agent.Action.TURN_LEFT])
+                if stench and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
+                    # if self.ForceuTurnCount == 0:
+                    #     self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
+                    #     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
+                    self.ForceuTurnCount += 1
+                    self.back = True
+                    return
 
-                print(self.explored)
-                # self.oneMore = True
+                if breeze and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
+                    # if self.ForceuTurnCount == 0:
+                    #     self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
+                    #     self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
+                    self.ForceuTurnCount += 1
+                    self.back = True
+                    return
+
+                self.explored.append(Agent.Action.FORWARD)
+                self.nextMove.append(Agent.Action.FORWARD)
+                # print(self.currentPos)
                 return self.takeMove(self.nextMove.pop())
 
-            if stench and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
-                if self.ForceuTurnCount == 0:
-                    self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                    self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                self.ForceuTurnCount += 1
-                self.back = True
-                return self.takeMove(self.nextMove.pop())
+        elif self.back == True:
+            if self.currentPos == (0,0):
+                return Agent.Action.CLIMB
+            if self.makeUturn == False:
+                self.makeUturn = True
+            if self.uTurnCount < 1:
+                self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
+            self.uTurnCount += 1
+            # print(self.currentPos)
+            return self.takeMove(self.explored.pop())
 
-            if breeze and self.grabbed == False and self.makeUturn == False and self.ForceuTurnCount < 2:
-                if self.ForceuTurnCount == 0:
-                    self.explored.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                    self.nextMove.extend([Agent.Action.TURN_LEFT,Agent.Action.TURN_LEFT])
-                self.ForceuTurnCount += 1
-                self.back = True
-                return self.takeMove(self.nextMove.pop())
-
-            self.explored.append(Agent.Action.FORWARD)
-            self.nextMove.append(Agent.Action.FORWARD)
-            return self.takeMove(self.nextMove.pop())
 
     def takeMove(self,move):
         # qprint("direction: "+self.direction)
         if self.back == True:
-            for move in range(len(self.explored)):
-                next_move = self.explored.pop()
-                if next_move == Agent.Action.TURN_LEFT:
-                    next_move = Agent.Action.TURN_RIGHT
-                elif next_move == Agent.Action.TURN_RIGHT:
-                    next_move = Agent.Action.TURN_LEFT
-                return next_move
+            if move == Agent.Action.TURN_LEFT:
+                move = Agent.Action.TURN_RIGHT
+            elif move == Agent.Action.TURN_RIGHT:
+                move = Agent.Action.TURN_LEFT
+
         if move == Agent.Action.FORWARD:
             if self.direction == 'right':
                 self.currentPos = (self.currentPos[0]+1,self.currentPos[1])
